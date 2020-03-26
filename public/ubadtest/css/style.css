@@ -1,0 +1,897 @@
+
+body,
+html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: "Varela Round", sans-serif !important;
+    background-color: #fff !important;
+}
+
+.container {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/****navbar v.2 *****/
+.navbar-header.col {
+    padding: 0 !important;
+}
+
+.navbar {
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+.nav-link img {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -8px 0;
+    float: left;
+    margin-right: 10px;
+}
+.navbar .navbar-brand {
+    color: #049a49;
+    padding-left: 0;
+    font-size: 20px;
+}
+.navbar .navbar-brand b {
+    font-weight: bold;
+    color: #fff;
+}
+.navbar ul.nav li a:hover,
+.navbar ul.nav li a:focus {
+    color: #fff !important;
+    background-color: #157f94; /**hover and click **/
+}
+.navbar ul.nav li.active a,
+.navbar ul.nav li.active a:hover,
+.navbar ul.nav li.active a:focus {
+    color: #157f94 !important;
+    background: transparent !important;
+}
+
+.navbar .nav-item i {
+    font-size: 18px;
+}
+.navbar .dropdown-item i {
+    font-size: 16px;
+    min-width: 22px;
+}
+.navbar .nav-item.open > a {
+    background: none !important;
+}
+.navbar .dropdown-menu {
+    border-radius: 1px;
+    border-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.navbar .dropdown-menu li a {
+    color: #157f94;
+    padding: 8px 20px;
+    line-height: normal;
+}
+.navbar .navbar-form {
+    margin-right: 0;
+    margin-left: 0;
+    border: 0;
+}
+
+.navbar-logo {
+    width: 55px;
+    height: 40px;
+}
+
+/***** old navbar *******/
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar {
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #fff !important;
+}
+
+.navbar-img {
+    widows: 30px !important;
+    height: 30px !important;
+}
+
+nav .navbar-nav li a {
+    color: #157f94 !important;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: #fff;
+}
+
+.navbar-nav > li > .dropdown-menu a:hover {
+    background-color: #fff;
+    color: black !important;
+}
+
+/***********************************************************************************index page *********************************/
+
+/**** banner section ****/
+.masthead {
+    width: 110%;
+    height: 30vw;
+    background-image: url("/resources/logo/banneubad.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*
+.layer {
+  background-color: rgba(13, 13, 13, 0.5);
+
+  width: 100%;
+  height: 100%;
+}
+*/
+
+header h1,
+header p {
+    color: #fff;
+}
+
+/****** Prodi ****/
+#prodi .card-img-top {
+    width: 100%;
+    height: 15vh;
+    padding-top: 2%;
+    object-fit: contain;
+}
+
+#prodi .card {
+    min-height: 325px;
+    box-shadow: 5px 5px 0px 0px #b3d9ff;
+}
+
+#prodi .card-text {
+    font-size: 13px;
+}
+
+#prodi .card-title {
+    font-weight: bold;
+}
+
+#prodi .tombol-tema {
+    background-color: #157f94;
+}
+
+#prodi a {
+    color: #fff;
+}
+/***** end prodi *****/
+
+/********* why ******/
+#why {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+#why .why-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#why img {
+    width: 10em;
+    height: 10em;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+#why .why-kelas {
+    text-align: left;
+}
+
+#why .why-dosen {
+    text-align: left;
+}
+
+#why .jarak {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#why .col-lg-4 p{
+    text-align: justify;
+}
+
+/********* end why ******/
+
+/***** pendaftaran *****/
+#pendaftaran {
+    min-height: 25vh;
+    background-color: #157f94;
+    color: #fff;
+    padding-top: 3%;
+    padding-bottom: 4%;
+}
+
+.square_btn {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    background-image: -webkit-linear-gradient(45deg, #ffc107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg, #ffc107 0%, #ff8b5f 100%);
+    transition: 0.4s;
+}
+
+.square_btn:hover {
+    background-image: -webkit-linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
+}
+
+.carousel {
+    width: 90%;
+    margin: 0px auto;
+}
+.slick-slide {
+    margin: 10px;
+}
+.slick-slide img {
+    width: 100%;
+    border: 2px solid #fff;
+}
+
+/******* Kelas ******/
+
+#kelas .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    height: 300px;
+}
+
+#kelas .card-sore {
+    background-color: #f5802c;
+    color: #fff;
+    box-shadow: 4px 4px #e1e6ed;
+}
+
+#kelas .card-pagi {
+    color: #fff;
+    background-color: #157f94;
+    box-shadow: 4px 4px #e1e6ed;
+}
+
+#kelas .card-eksekutif {
+    color: #fff;
+    background-color: #ffc107;
+    box-shadow: 4px 4px #e1e6ed;
+}
+
+#kelas .card-title {
+    font-weight: bold;
+}
+
+#kelas .card-img-top {
+    width: 100%;
+    height: 15vh;
+    padding-top: 2%;
+    object-fit: contain;
+}
+
+/*******NIIT University *****/
+
+#niit-banner {
+
+    min-height: 45vh;
+
+    background: url("/resources/logo/niituniv1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#niit-banner .layer {
+    background-color: rgba(13, 13, 13, 0.5);
+    padding-top: 1.5em;
+    padding-bottom: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+#niit-banner .niit-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/***** berita *****/
+#berita {
+    min-height: 60vh;
+    background-color: #fff;
+    color: black;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#berita .card-img-top {
+    width: 100%;
+    min-height: 15vw;
+    object-fit: cover;
+}
+
+/***** contact ****/
+#contact {
+    min-height: 10vh;
+    background-color: #157f94;
+    color: #fff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#contact p {
+    text-align: justify;
+
+    font-size: 13px;
+}
+
+/**** footer ****/
+footer {
+    background-color: #393d3e;
+    color: #fff;
+    font-size: 13px;
+}
+
+/******************************* VISI DAN MISI PAGE ******************************************************************/
+
+/***** visi *****/
+#visi {
+    min-height: 30vh;
+    background-color: #157f94;
+    color: #fff;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#visi p {
+    font-size: 18px;
+}
+
+#visi hr {
+    background-color: #fff;
+}
+
+/***** misi *****/
+#misi {
+    min-height: 50vh;
+    background-color: #157f94;
+    color: #fff;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#misi p {
+    font-size: 18px;
+}
+
+#misi hr {
+    background-color: #fff;
+}
+
+#misi ul li {
+    margin-top: 10px;
+}
+
+/**** ciri khas *****/
+#ciri-khas {
+    min-height: 50vh;
+    background-color: #fff;
+    color: black;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#ciri-khas h5 {
+    font-weight: bold;
+}
+
+#ciri-khas p {
+    color: #6c757d !important;
+}
+
+#ciri-khas .card-img-top {
+    width: 100%;
+    height: 20vh;
+    object-fit: contain;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/***************************************** Tentang Ubad ******************************/
+
+#tentang-ubad {
+    min-height: 50vh;
+    background-color: #157f94;
+    color: #fff;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#tentang-ubad h1 {
+    font-weight: bold;
+}
+
+#tentang-ubad p {
+    font-size: 14px;
+}
+
+#profil-universitas {
+    min-height: 50vh;
+    background-color: #fff;
+    color: #6c757d;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+/*Profile Rektor Ketua*/
+.profile-card-5 {
+    margin-top: 20px;
+}
+
+.profile-card-5 .card-img-block {
+    width: 91%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+}
+.profile-card-5 .card-img-block img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+}
+.profile-card-5 h5 {
+    color: #4e5e30;
+    font-weight: 600;
+}
+.profile-card-5 p {
+    font-size: 14px;
+    font-weight: 300;
+}
+.profile-card-5 .btn-primary {
+    background-color: #4e5e30;
+    border-color: #4e5e30;
+}
+
+#deskripsi-universitas {
+    background-color: #fff;
+    color: #fff;
+    min-height: 20vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#deskripsi-universitas .tag {
+    font-weight: bold;
+}
+
+#deskripsi-universitas .card {
+    background-color: #fff;
+    color: #393d3e;
+    text-align: center;
+}
+
+#deskripsi-universitas .card-img-top {
+    width: 100%;
+    height: 15vh;
+    object-fit: contain;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#deskripsi-universitas .card-body {
+    background-color: #157f94;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: #fff;
+}
+
+#deskripsi-universitas .card-text {
+    font-size: 12px;
+}
+/**************************Content atas Setiap Prodi *********************/
+
+#prodi-content {
+    min-height: 50vh;
+    background-color: #fff;
+    color: #696969;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+#prodi-content .prodi-icon {
+    width: 100%;
+    height: 15vh;
+    padding-top: 2%;
+    object-fit: contain;
+}
+
+#prodi-content .col-lg-4 img {
+    width: 40vh;
+    height: 40vh;
+    display: block;
+    margin: 0 auto;
+}
+
+#prodi-content p {
+    text-align: justify;
+}
+
+/************************************************************** prodi teknik biomedis *************************************/
+
+#prodi-banner-teknik-biomedis {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/teknik-biomedis-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-teknik-biomedis .layer {
+    background-color: rgba(13, 13, 13, 0.5);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi teknologi pangan *************************************/
+
+#prodi-banner-teknologi-pangan {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/teknologi-pangan-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-teknologi-pangan .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi psikologi *************************************/
+
+#prodi-banner-psikologi {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/psikologi-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-psikologi .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi GIZI *************************************/
+
+#prodi-banner-gizi {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/gizi-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-gizi .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi farmasi *************************************/
+
+#prodi-banner-farmasi {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/farmasi-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-farmasi .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi akuntansi *************************************/
+
+#prodi-banner-akuntansi {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/akunting-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-akuntansi .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi hubungan masyarakat *************************************/
+
+#prodi-banner-hubungan-masyarakat {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/hubunngan-masyarakat-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-hubungan-masyarakat .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi hubungan bahasa inggris *************************************/
+
+#prodi-banner-bahasa-inggris {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/bahasa-inggris-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-bahasa-inggris .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi hubungan hukum *************************************/
+
+#prodi-banner-hukum {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/hukum-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-hukum .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************************** prodi hubungan sistem informasi *************************************/
+
+#prodi-banner-sistem-informasi {
+    max-height: 90vh;
+    min-height: 90vh;
+    height: 90vh;
+    background: url("/resources/logo/sistem-informasi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#prodi-banner-sistem-informasi .layer {
+    background-color: rgba(13, 13, 13, 0.4);
+
+    width: 100%;
+    height: 100%;
+}
+
+/******************************************************** Halaman Berita ***********************************/
+#halaman-berita .col-lg-4,
+.col-lg-8 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/*=================================================================================================*/
+
+/****************************************** Staff ***********************/
+#team {
+    background: #eee !important;
+}
+
+#team .col-lg-10 p{
+    text-align: left;
+}
+
+#team .col-lg-2 p{
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 30rem;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+/*****************************************************************/
