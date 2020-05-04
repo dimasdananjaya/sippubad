@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Pembayaran;
 use App\Periode;
 use App\User;
+use App\Tagihan;
 use DB;
 use Auth;
 use Hash;
+
 
 class DashboardMahasiswa extends Controller
 {
@@ -23,6 +25,11 @@ class DashboardMahasiswa extends Controller
         $dataUser=DB::select(DB::raw("SELECT * FROM users WHERE id_user='$id_user'"));
         $dataPeriode=Periode::all();
         $dataPembayaran=DB::select(DB::raw("SELECT * FROM pembayaran WHERE id_user='$id_user'"));
+        $dataTagihan=DB::table('tagihan')
+        ->join('periode', 'periode.id_periode', '=', 'tagihan.id_periode')
+        ->select('tagihan.*', 'periode.periode')
+        ->where('id_user',$id_user)
+        ->get();
 
         $dataPembayaranSemester1=DB::select(DB::raw("SELECT SUM(jumlah_bayar) AS total FROM pembayaran WHERE id_user='$id_user' and semester='1'"));
         $dataPembayaranSemester2=DB::select(DB::raw("SELECT SUM(jumlah_bayar) AS total FROM pembayaran WHERE id_user='$id_user' and semester='2'"));
@@ -58,6 +65,7 @@ class DashboardMahasiswa extends Controller
         ->with('user',$dataUser)
         ->with('periode',$dataPeriode)
         ->with('pembayaran',$dataPembayaran)
+        ->with('tagihan',$dataTagihan)
         ->with('s1',$dataPembayaranSemester1)
         ->with('s2',$dataPembayaranSemester2)
         ->with('s3',$dataPembayaranSemester3)

@@ -120,7 +120,7 @@
 
             <div class="col-lg-8">
                 <h4>Riwayat Pembayaran : </h4>
-                <table id="tabel" class="table table-hover table-bordered">
+                <table id="tabel" class="table table-hover table-bordered table-resposive">
                     <thead>
                         <tr>
                             <th>Nomor</th>
@@ -143,13 +143,67 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
+
+
+                <h3 style="margin-top: 20px;">Tagihan Pembayaran</h3>
+                <hr>
+                <table id="tabel-tagihan" class="table table-hover table-bordered table-resposive">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Id.</th>
+                            <th>Nama Tagihan</th>
+                            <th>Jumlah Tagihan</th>
+                            <th>Semester</th>
+                            <th>Keterangan</th>
+                            <th>Periode</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($tagihan as $tgh)
+                            <tr>
+                                <td></td>
+                                <td>{{$tgh->id_tagihan}}</td>
+                                <td>{{$tgh->nama_tagihan}}</td>
+                                <td>Rp. {{ number_format($tgh->jumlah_tagihan, 2, ',', '.') }}</td>
+                                <td>{{$tgh->semester}}</td>
+                                <td>{{$tgh->keterangan}}</td>
+                                <td>{{$tgh->periode}}</td>
+                                <td>{{$tgh->status}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                    
+            </div><!--end col-->
         </div><!--row-->
     </div><!--container-->
 
     <script type="text/javascript">
         $(document).ready(function() {
             var t = $('#tabel').DataTable( {
+                "columnDefs": [ {
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                } ],
+                "order": [[ 1, 'asc' ]],
+                "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+            }
+            } );
+        
+            t.on( 'order.dt search.dt', function () {
+                t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                    cell.innerHTML = i+1;
+                } );
+            } ).draw();        
+        } );
+
+        
+        $(document).ready(function() {
+            var t = $('#tabel-tagihan').DataTable( {
                 "columnDefs": [ {
                     "searchable": false,
                     "orderable": false,

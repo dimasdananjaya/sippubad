@@ -41,6 +41,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::put('/pembayaran/update_status_pembayaran', 'PembayaranController@StatusPembayaranUpdate');
     Route::Post('/pembayaran/status_pembayaran','PembayaranController@statusPembayaran');
     Route::Post('/pembayaran/status_pembayaran/initialize','InitStatusPembayaran@initStatusPembayaran');
+    Route::Post('/tagihan/tambah','TagihanController@tambahTagihan');
+    Route::put('/tagihan/update','TagihanController@updateTagihan');
     Route::resource('/periode','PeriodeController');
     Route::resource('/user','UserController');
     Route::resource('/biaya_prodi','BiayaProdiController');

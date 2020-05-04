@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <title>Ubad Test Site</title>
+    <title>SIPP UBAD</title>
 
     <script src="https://kit.fontawesome.com/4f161c1c95.js" crossorigin="anonymous"></script>
 

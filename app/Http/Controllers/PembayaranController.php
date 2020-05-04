@@ -11,6 +11,7 @@ use App\Biaya_Prodi;
 use App\Periode;
 use App\Pembayaran;
 use App\StatusPembayaran;
+use App\Tagihan;
 
 class PembayaranController extends Controller
 {
@@ -21,6 +22,7 @@ class PembayaranController extends Controller
      */
     public function index()
     {
+        //ambil data user untuk ditampilkan pada menu awal pembayaran
         $dataUser= DB::table('users')
         ->join('prodi', 'users.id_prodi', '=', 'prodi.id_prodi')
         ->select('users.*', 'prodi.prodi')
@@ -49,6 +51,7 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
+        //simpan data pembayaran per mahasiswa
         $simpan=new Pembayaran;
         $simpan->id_user=$request->input('id_user');
         $simpan->id_periode=$request->input('id_periode');   
@@ -87,6 +90,7 @@ class PembayaranController extends Controller
      */
     public function show($id)
     {
+        //tampilkan history pembayaran per mahasiswa di menu pembayaran
         $dataUser=DB::select(DB::raw("SELECT * FROM users WHERE id_user='$id'"));
         $dataPeriode=Periode::all();
         //$dataPembayaran=DB::select(DB::raw("SELECT * FROM pembayaran WHERE id_user='$id'"));
@@ -97,6 +101,11 @@ class PembayaranController extends Controller
         ->where('id_user',$id)
         ->get();
         $dataStatusPembayaran=DB::select(DB::raw("SELECT * FROM status_pembayaran WHERE id_user='$id'"));
+        $dataTagihan=DB::table('tagihan')
+        ->join('periode', 'periode.id_periode', '=', 'tagihan.id_periode')
+        ->select('tagihan.*', 'periode.periode')
+        ->where('id_user',$id)
+        ->get();
 
         $dataPembayaranSemester1=DB::select(DB::raw("SELECT SUM(jumlah_bayar) AS total FROM pembayaran WHERE id_user='$id' and semester='1'"));
         $dataPembayaranSemester2=DB::select(DB::raw("SELECT SUM(jumlah_bayar) AS total FROM pembayaran WHERE id_user='$id' and semester='2'"));
@@ -134,6 +143,7 @@ class PembayaranController extends Controller
         ->with('periode',$dataPeriode)
         ->with('pembayaran',$dataPembayaran)
         ->with('status_pembayaran',$dataStatusPembayaran)
+        ->with('tagihan',$dataTagihan)
         ->with('s1',$dataPembayaranSemester1)
         ->with('s2',$dataPembayaranSemester2)
         ->with('s3',$dataPembayaranSemester3)
@@ -184,6 +194,7 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //update pembayaran mahasiswa di menu pembayaran
         $simpan=Pembayaran::find($id);
         $simpan->id_user=$request->input('id_user');
         $simpan->id_periode=$request->input('id_periode');   

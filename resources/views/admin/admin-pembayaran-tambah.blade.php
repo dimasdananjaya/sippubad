@@ -127,7 +127,7 @@
             </div><!--col-->
 
             <div class="col-lg-9">
-                <h5>Riwayat Pembayaran</h5>
+                <h5 style="margin-top: 20px;">Riwayat Pembayaran</h5>
                 <hr>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambah-pembayaran" style="margin-bottom:20px;">
                     Tambah Pembayaran
@@ -206,6 +206,7 @@
                     <thead>
                         <tr>
                             <th style="display:none">Nomor</th>
+                            <th>Id</th>
                             <th>Tanggal Bayar</th>
                             <th>No. Referensi</th>
                             <th>Nama Pembayaran</th>
@@ -223,6 +224,7 @@
                         @foreach($pembayaran as $pmbyr)
                             <tr>
                             <td style="display:none;"></td>
+                            <td>{{$pmbyr->id_pembayaran}}</td>
                             <td>{{$pmbyr->created_at}}</td>
                             <td>{{$pmbyr->no_referensi}}</td>
                             <td>{{$pmbyr->nama_pembayaran}}</td>
@@ -346,7 +348,7 @@
                                 </div>
                                 </div>
                         </div>
-                            <!--Modal Edit UML-->
+                            <!--Modal Edit Pembayaran-->
                         @endforeach
                     </tbody>
                 </table>
@@ -399,8 +401,167 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!--Modal tambah pembayaran-->
+                </div>
+                <!--Modal tambah status pembayaran-->
+                
+                <h3 style="margin-top: 20px;">Tagihan Pembayaran</h3>
+                <hr>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambah-tagihan-pembayaran-modal" style="margin-bottom:20px;">
+                    Tambah Tagihan
+                </button>
+                
+                        <!-- Modal Tambah Tagihan Pembayaran-->
+                        <div class="modal fade" id="tambah-tagihan-pembayaran-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Form Tambah Tagihan Pembayaran</h2>   
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">                  
+                                    {!!Form::open(['action'=>'TagihanController@tambahTagihan', 'method'=>'POST'])!!}
+                                    <div class="form-group">
+                                        {{Form::label('nama_tagihan','Nama Tagihan :')}}
+                                        {{Form::text('nama_tagihan','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('jumlah_tagihan','Jumlah Tagihan :')}}
+                                        {{Form::text('jumlah_tagihan','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('semester','Semester :')}}
+                                        <select name="semester" class="form-control form-group">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="pendek">Pendek</option>
+                                        </select>
+                                        {{Form::label('keterangan','Keterangan :')}}
+                                        {{Form::text('keterangan','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('periode','Periode :')}}
+                                        <select name="id_periode" class="form-control form-group">
+                                        @foreach ($periode as $periode1)
+                                        <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
+                                        @endforeach
+                                        </select>
+                                        @foreach($user as $usr)
+                                        {{Form::hidden('id_user', $usr->id_user) }}
+                                        {{Form::hidden('id_prodi', $usr->id_prodi) }}
+                                        @endforeach
+                          
+                                    </div>
+                                    {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
+                                {!!Form::close()!!}
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!--Modal Tambah Tagihan-->
+                <table id="tabel-tagihan" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Id.</th>
+                            <th>Nama Tagihan</th>
+                            <th>Jumlah Tagihan</th>
+                            <th>Semester</th>
+                            <th>Keterangan</th>
+                            <th>Periode</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($tagihan as $tgh)
+                        <tr>
+                            <td></td>
+                            <td>{{$tgh->id_tagihan}}</td>
+                            <td>{{$tgh->nama_tagihan}}</td>
+                            <td>Rp. {{ number_format($tgh->jumlah_tagihan, 2, ',', '.') }}</td>
+                            <td>{{$tgh->semester}}</td>
+                            <td>{{$tgh->keterangan}}</td>
+                            <td>{{$tgh->periode}}</td>
+                            <td>{{$tgh->status}}</td>
+                            <td>
+                                <a class="btn btn-success" style="color:#fff;" data-toggle="modal" data-target="#tagihan-pembayaran-edit-modal{{$tgh->id_tagihan}}">Edit</a>
+                            </td> 
+                        </tr>
+                        <!-- Modal Edit Tagihan Pembayaran-->
+                        <div class="modal fade" id="tagihan-pembayaran-edit-modal{{$tgh->id_tagihan}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Form Edit Tagihan Pembayaran</h2>   
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">                  
+                                {!!Form::open(['action'=>['TagihanController@updateTagihan', $tgh->id_tagihan], 'method'=>'PUT'])!!}
+                                    <div class="form-group"><div class="form-group">
+                                        {{Form::label('id_tagihan','Id Tagihan :')}}
+                                        {{Form::text('id_tagihan',$tgh->id_tagihan,['class'=>'form-control form-group','placeholder'=>'','readonly'])}}
+                                        {{Form::label('nama_tagihan','Nama Tagihan :')}}
+                                        {{Form::text('nama_tagihan',$tgh->nama_tagihan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('jumlah_tagihan','Jumlah Tagihan :')}}
+                                        {{Form::text('jumlah_tagihan',$tgh->jumlah_tagihan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('semester','Semester :')}}
+                                        <select name="semester" class="form-control form-group">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="pendek">Pendek</option>
+                                        </select>
+                                        {{Form::label('keterangan','Keterangan :')}}
+                                        {{Form::text('keterangan',$tgh->keterangan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                        {{Form::label('periode','Periode :')}}
+                                        <select name="id_periode" class="form-control form-group">
+                                        @foreach ($periode as $periode1)
+                                        <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
+                                        @endforeach
+                                        </select>
+                                        @foreach($user as $usr)
+                                        {{Form::hidden('id_user', $usr->id_user) }}
+                                        {{Form::hidden('id_prodi', $usr->id_prodi) }}
+                                        @endforeach
+                          
+                                    </div>
+                                    {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
+                                {!!Form::close()!!}
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                        <!--Modal Edit Tagihan Pembayaran-->
+                    @endforeach
+                    </tbody>
+                </table>
 
                 <div style="margin-top:20px;">
                     <h3>Status Pembayaran</h3>
@@ -478,7 +639,7 @@
                                     </div>
                                     </div>
                             </div>
-                                <!--Modal Edit UML-->
+                                <!--Modal Edit status pembayaran-->
                             @endforeach
                         </tbody>
                     </table>
@@ -490,6 +651,26 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var t = $('#tabel').DataTable( {
+                "columnDefs": [ {
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                } ],
+                "order": [[ 1, 'asc' ]],
+                "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+            }
+            } );
+        
+            t.on( 'order.dt search.dt', function () {
+                t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                    cell.innerHTML = i+1;
+                } );
+            } ).draw();        
+        } );
+
+        $(document).ready(function() {
+            var t = $('#tabel-tagihan').DataTable( {
                 "columnDefs": [ {
                     "searchable": false,
                     "orderable": false,
