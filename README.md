@@ -1,6 +1,6 @@
 ## About This Repositories
 
-A Lecturer Reporting System for Universitas Bali Dwipa using Laravel framework
+Payment Record System for Universitas Bali Dwipa using Laravel framework
 <p>this repository created by : Anak Agung Gede Dimas Dananjaya</p>
 
 
