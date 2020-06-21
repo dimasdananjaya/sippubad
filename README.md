@@ -1,6 +1,7 @@
 ## About This Repositories
+<p>this repository created by : Anak Agung Gede Dimas Dananjaya</p>
 
-A Lecturer Reporting System for Universitas Bali Dwipa
+Universitas Bali Dwipa Payment Records Management System, created with Laravel framework
 
 Visit Universitas Bali Dwipa
 <p>instagram     : @universitasbalidwipa</p>
@@ -10,5 +11,5 @@ Visit Universitas Bali Dwipa
 
 
 ## License
-<p>this repository created by : Anak Agung Gede Dimas Dananjaya</p>
+
 <p>The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).</p>

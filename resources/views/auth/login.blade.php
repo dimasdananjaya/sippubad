@@ -8,7 +8,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="card login-form">
-                    <img class="card-img-top" src="/resources/logo/online-banking.png">
+                    <img class="d-block mx-auto" src="/resources/logo/welcome.svg" style="max-width:20em; max-height:18em;">
                     <div class="card-body">
                         <h2><b>SIPA UBAD</b></h2>
                         <form method="POST" action="{{ route('login') }}">

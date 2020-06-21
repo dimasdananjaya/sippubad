@@ -8,12 +8,11 @@
             </div>
             <div class="col-lg-4">
                 <div class="card login-form">
-                    <img class="card-img-top" src="/resources/logo/online-banking.png">
+                    <img class="d-block mx-auto" src="/resources/logo/welcome.svg" style="max-width:20em; max-height:18em;">
                     <div class="card-body">
-                        <h2><b>SIPA UBAD</b></h2>
-                        <div class="text-center" style="margin-top:60px;">
+                        <div class="text-center" style="margin-top:1em;">
                         <h3>Welcome To SIPA UBAD</h3>
-                        <h5>Silahkan Login Terlebih Dahulu</h5>
+                        <p>Silahkan Login Terlebih Dahulu</p>
                         <a href="/login" class="btn btn-success">Login Page</a>
                         </div>
                     </div>

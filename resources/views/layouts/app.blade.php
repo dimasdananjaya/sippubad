@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--allow https-->
 
     <link rel="shortcut icon" href="/resources/logo/balidwipa.png" />
     <link rel="apple-touch-icon" href="/resources/logo/balidwipa.png" />
@@ -155,13 +155,23 @@
 
     </div>
     
-
-    <footer>
-        <p class="text-center">Universitas Bali Dwipa 2019
-            <br><a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Icon By Eucalyp</a>
-        </p>
+    <hr>
+    <footer class="fdb-block footer-large">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <a class="navbar-brand" style="color: black;"><img src="/resources/logo/balidwipa.png"
+                        class="navbar-logo" />Universitas Bali Dwipa
+                     </a>
+                    <p>Jalan Pulau Flores No.5<br>Denpasar, Bali 80114</p>
+                    <p>Email : info@balidwipa.ac.id</p>
+                    <p>Whatsapp : 085792463944</p>
+                    <p>Phone : 081339827770</p>
+                    <p><small>Icons and Pictures by: freepik.com and flaticon.com</small></p>
+                </div>
+            </div>
+        </div>
     </footer>
-    </div>
 
 
     <!-- Optional JavaScript -->
