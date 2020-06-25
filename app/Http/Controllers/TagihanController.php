@@ -42,7 +42,7 @@ class TagihanController extends Controller
 
     public function updateTagihan(Request $request, $id){
         //simpan data tagihan per mahasiswa
-        $simpan=Pembayaran::find($id);
+        $simpan=Tagihan::find($id);
         $simpan->id_user=$request->input('id_user');
         $simpan->id_periode=$request->input('id_periode');
         $simpan->nama_tagihan=$request->input('nama_tagihan');
@@ -50,9 +50,7 @@ class TagihanController extends Controller
         $simpan->keterangan=$request->input('keterangan');
         $simpan->status=$request->input('status');
         $simpan->semester=$request->input('semester');
-        $simpan->status=$request->input('status');
         $simpan->id_prodi=$request->input('id_prodi');
-
 
         $validator = Validator::make($request->all(), [
 

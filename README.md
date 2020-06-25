@@ -1,9 +1,8 @@
 ## About This Repositories
 <p>this repository created by : Anak Agung Gede Dimas Dananjaya</p>
 
-<<<<<<< HEAD
 Universitas Bali Dwipa Payment Records Management System, created with Laravel framework
-=======
+
 Payment Record System for Universitas Bali Dwipa using Laravel framework
 <p>this repository created by : Anak Agung Gede Dimas Dananjaya</p>
 

@@ -543,6 +543,11 @@
                                         <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
                                         @endforeach
                                         </select>
+                                        {{Form::label('status','Status :')}}
+                                        <select name="status" class="form-control form-group">
+                                            <option value="Lunas">Lunas</option>
+                                            <option value="Belum Lunas">Belum Lunas</option>
+                                        </select>
                                         @foreach($user as $usr)
                                         {{Form::hidden('id_user', $usr->id_user) }}
                                         {{Form::hidden('id_prodi', $usr->id_prodi) }}
