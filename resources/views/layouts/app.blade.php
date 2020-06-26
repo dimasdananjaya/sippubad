@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--allow https-->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <link rel="shortcut icon" href="/resources/logo/balidwipa.png" />
     <link rel="apple-touch-icon" href="/resources/logo/balidwipa.png" />
@@ -264,10 +264,6 @@
 
     </script>
 -->
-
-
-
-
 </body>
 
 </html>

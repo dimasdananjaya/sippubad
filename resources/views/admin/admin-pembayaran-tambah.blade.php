@@ -303,32 +303,36 @@
                                             {{Form::text('jumlah_bayar',$pmbyr->jumlah_bayar,['class'=>'form-control form-group','placeholder'=>'Jumlah Bayar','required'])}}
                                             {{Form::label('Semester','Semester :')}}
                                             <select name="semester" class="form-control form-group">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="pendek">Pendek</option>
+                                                <option {{old('semester',$pmbyr->semester)=="1"? 'selected':''}} value="1">1</option>
+                                                <option {{old('semester',$pmbyr->semester)=="2"? 'selected':''}} value="2">2</option>
+                                                <option {{old('semester',$pmbyr->semester)=="3"? 'selected':''}} value="3">3</option>
+                                                <option {{old('semester',$pmbyr->semester)=="4"? 'selected':''}} value="4">4</option>
+                                                <option {{old('semester',$pmbyr->semester)=="5"? 'selected':''}} value="5">5</option>
+                                                <option {{old('semester',$pmbyr->semester)=="6"? 'selected':''}} value="6">6</option>
+                                                <option {{old('semester',$pmbyr->semester)=="7"? 'selected':''}} value="7">7</option>
+                                                <option {{old('semester',$pmbyr->semester)=="8"? 'selected':''}} value="8">8</option>
+                                                <option {{old('semester',$pmbyr->semester)=="9"? 'selected':''}} value="9">9</option>
+                                                <option {{old('semester',$pmbyr->semester)=="10"? 'selected':''}} value="10">10</option>
+                                                <option {{old('semester',$pmbyr->semester)=="11"? 'selected':''}} value="11">11</option>
+                                                <option {{old('semester',$pmbyr->semester)=="12"? 'selected':''}} value="12">12</option>
+                                                <option {{old('semester',$pmbyr->semester)=="13"? 'selected':''}} value="13">13</option>
+                                                <option {{old('semester',$pmbyr->semester)=="14"? 'selected':''}} value="14">14</option>
+                                                <option {{old('semester',$pmbyr->semester)=="pendek"? 'selected':''}} value="pendek">Pendek</option>
                                             </select>
                                             {{Form::label('periode','Periode :')}}
                                             <select name="id_periode" class="form-control form-group">
-                                            @foreach ($periode as $periode1)
-                                            <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
-                                            @endforeach
+                                                @foreach($periode as $periode1)
+                                                @if ($pmbyr->id_periode == $periode1->id_periode)
+                                                      <option value="{{ $periode1->id_periode }}" selected>{{ $periode1->periode }}</option>
+                                                @else
+                                                      <option value="{{ $periode1->id_periode }}">{{ $periode1->periode }}</option>
+                                                @endif
+                                                @endforeach
                                             </select>
                                             {{Form::label('tipe','Tipe :')}}
                                             <select name="tipe" class="form-control form-group">
-                                                <option value="bayar">Bayar</option>
-                                                <option value="potongan">Potongan</option>
+                                                <option {{old('tipe',$pmbyr->tipe)=="bayar"? 'selected':''}}  value="bayar">Bayar</option>
+                                                <option {{old('tipe',$pmbyr->tipe)=="potongan"? 'selected':''}} value="potongan">Potongan</option>
                                             </select>
                                             {{Form::label('keterangan','Keterangan :')}}
                                             {{Form::text('keterangan',$pmbyr->keterangan,['class'=>'form-control form-group','placeholder'=>'Keterangan'])}}
@@ -449,9 +453,9 @@
                                         {{Form::text('keterangan','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                         {{Form::label('periode','Periode :')}}
                                         <select name="id_periode" class="form-control form-group">
-                                        @foreach ($periode as $periode1)
-                                        <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
-                                        @endforeach
+                                            @foreach ($periode as $periode1)
+                                            <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
+                                            @endforeach
                                         </select>
                                         @foreach($user as $usr)
                                         {{Form::hidden('id_user', $usr->id_user) }}
@@ -519,34 +523,38 @@
                                         {{Form::text('jumlah_tagihan',$tgh->jumlah_tagihan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                         {{Form::label('semester','Semester :')}}
                                         <select name="semester" class="form-control form-group">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="pendek">Pendek</option>
+                                            <option {{old('semester',$pmbyr->semester)=="1"? 'selected':''}} value="1">1</option>
+                                            <option {{old('semester',$pmbyr->semester)=="2"? 'selected':''}} value="2">2</option>
+                                            <option {{old('semester',$pmbyr->semester)=="3"? 'selected':''}} value="3">3</option>
+                                            <option {{old('semester',$pmbyr->semester)=="4"? 'selected':''}} value="4">4</option>
+                                            <option {{old('semester',$pmbyr->semester)=="5"? 'selected':''}} value="5">5</option>
+                                            <option {{old('semester',$pmbyr->semester)=="6"? 'selected':''}} value="6">6</option>
+                                            <option {{old('semester',$pmbyr->semester)=="7"? 'selected':''}} value="7">7</option>
+                                            <option {{old('semester',$pmbyr->semester)=="8"? 'selected':''}} value="8">8</option>
+                                            <option {{old('semester',$pmbyr->semester)=="9"? 'selected':''}} value="9">9</option>
+                                            <option {{old('semester',$pmbyr->semester)=="10"? 'selected':''}} value="10">10</option>
+                                            <option {{old('semester',$pmbyr->semester)=="11"? 'selected':''}} value="11">11</option>
+                                            <option {{old('semester',$pmbyr->semester)=="12"? 'selected':''}} value="12">12</option>
+                                            <option {{old('semester',$pmbyr->semester)=="13"? 'selected':''}} value="13">13</option>
+                                            <option {{old('semester',$pmbyr->semester)=="14"? 'selected':''}} value="14">14</option>
+                                            <option {{old('semester',$pmbyr->semester)=="pendek"? 'selected':''}} value="pendek">Pendek</option>
                                         </select>
                                         {{Form::label('keterangan','Keterangan :')}}
                                         {{Form::text('keterangan',$tgh->keterangan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                         {{Form::label('periode','Periode :')}}
                                         <select name="id_periode" class="form-control form-group">
-                                        @foreach ($periode as $periode1)
-                                        <option value="{{$periode1->id_periode}}">{{$periode1->periode}}</option>
-                                        @endforeach
+                                            @foreach($periode as $periode1)
+                                            @if ($tgh->id_periode == $periode1->id_periode)
+                                                  <option value="{{ $periode1->id_periode }}" selected>{{ $periode1->periode }}</option>
+                                            @else
+                                                  <option value="{{ $periode1->id_periode }}">{{ $periode1->periode }}</option>
+                                            @endif
+                                            @endforeach
                                         </select>
                                         {{Form::label('status','Status :')}}
                                         <select name="status" class="form-control form-group">
-                                            <option value="Lunas">Lunas</option>
-                                            <option value="Belum Lunas">Belum Lunas</option>
+                                            <option {{old('status',$tgh->status)=="Lunas"? 'selected':''}} value="Lunas">Lunas</option>
+                                            <option {{old('status',$tgh->status)=="Belum Lunas"? 'selected':''}} value="Belum Lunas">Belum Lunas</option>
                                         </select>
                                         @foreach($user as $usr)
                                         {{Form::hidden('id_user', $usr->id_user) }}
@@ -616,20 +624,26 @@
                                                 <input type="text" class="form-group form-control" placeholder="{{$sts->id_status_pembayaran}}" readonly>
                                                 {{Form::label('Status','Status Pembayaran :')}}
                                                 <select name="status" class="form-group form-control">
-                                                    <option value="Lunas">Lunas</option>
-                                                    <option value="Belum_Lunas">Belum Lunas</option>
+                                                    <option {{old('status',$sts->status)=="Lunas"? 'selected':''}} value="Lunas">Lunas</option>
+                                                    <option {{old('status',$sts->status)=="Belum_Lunas"? 'selected':''}} value="Belum_Lunas">Belum Lunas</option>
                                                 </select>
                                                 {{Form::label('semester','Semester :')}}
                                                 <select name="semester" class="form-control form-group">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="pendek">Pendek</option>
+                                                    <option {{old('semester',$sts->semester)=="1"? 'selected':''}} value="1">1</option>
+                                                    <option {{old('semester',$sts->semester)=="2"? 'selected':''}} value="2">2</option>
+                                                    <option {{old('semester',$sts->semester)=="3"? 'selected':''}} value="3">3</option>
+                                                    <option {{old('semester',$sts->semester)=="4"? 'selected':''}} value="4">4</option>
+                                                    <option {{old('semester',$sts->semester)=="5"? 'selected':''}} value="5">5</option>
+                                                    <option {{old('semester',$sts->semester)=="6"? 'selected':''}} value="6">6</option>
+                                                    <option {{old('semester',$sts->semester)=="7"? 'selected':''}} value="7">7</option>
+                                                    <option {{old('semester',$sts->semester)=="8"? 'selected':''}} value="8">8</option>
+                                                    <option {{old('semester',$sts->semester)=="9"? 'selected':''}} value="9">9</option>
+                                                    <option {{old('semester',$sts->semester)=="10"? 'selected':''}} value="10">10</option>
+                                                    <option {{old('semester',$sts->semester)=="11"? 'selected':''}} value="11">11</option>
+                                                    <option {{old('semester',$sts->semester)=="12"? 'selected':''}} value="12">12</option>
+                                                    <option {{old('semester',$sts->semester)=="13"? 'selected':''}} value="13">13</option>
+                                                    <option {{old('semester',$sts->semester)=="14"? 'selected':''}} value="14">14</option>
+                                                    <option {{old('semester',$sts->semester)=="pendek"? 'selected':''}} value="pendek">Pendek</option>
                                                 </select>
                                                 {{Form::hidden('validated_by', Auth::user()->name) }}
                                                 {{Form::hidden('id_status_pembayaran', $sts->id_status_pembayaran) }}
