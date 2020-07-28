@@ -374,6 +374,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -420,6 +421,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -1583,16 +1585,16 @@
         },
         {
             "name": "realrashid/sweet-alert",
-            "version": "v3.1.2",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/realrashid/sweet-alert.git",
-                "reference": "05b6726005cfb46dcdea2f1b21d58b9d403c7956"
+                "reference": "b72e2b41b5295be5bae5c54dbab851696fef196a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/05b6726005cfb46dcdea2f1b21d58b9d403c7956",
-                "reference": "05b6726005cfb46dcdea2f1b21d58b9d403c7956",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/b72e2b41b5295be5bae5c54dbab851696fef196a",
+                "reference": "b72e2b41b5295be5bae5c54dbab851696fef196a",
                 "shasum": ""
             },
             "require": {
@@ -1645,7 +1647,7 @@
                 "sweet-alert2",
                 "toast"
             ],
-            "time": "2020-01-24T18:38:56+00:00"
+            "time": "2020-06-11T19:38:31+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

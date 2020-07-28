@@ -29,26 +29,11 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-    <!--AOS-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-
-    <!--Sweet alert-->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <!--datatables-->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-
-
 </head>
 
 <body>
@@ -187,83 +172,6 @@
             Swal.fire({!! Session::pull('alert.config') !!});
         </script>
     @endif
-
-    <!--
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-
-        $(".carousel").slick({
-            dots: true,
-            infinite: false,
-            speed: 1500,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            responsive: [{
-                breakpoint: 1024,
-                settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-                }
-            }, {
-                breakpoint: 600,
-                settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-                }
-            } // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-            ]
-            });
-
-            $(".carousel-berita").slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            responsive: [{
-                breakpoint: 1024,
-                settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: false,
-                dots: false
-                }
-            }, {
-                breakpoint: 600,
-                settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-                }
-            } // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-            ]
-            });
-
-
-    </script>
--->
 </body>
 
 </html>

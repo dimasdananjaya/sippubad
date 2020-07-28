@@ -523,21 +523,21 @@
                                         {{Form::text('jumlah_tagihan',$tgh->jumlah_tagihan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                         {{Form::label('semester','Semester :')}}
                                         <select name="semester" class="form-control form-group">
-                                            <option {{old('semester',$pmbyr->semester)=="1"? 'selected':''}} value="1">1</option>
-                                            <option {{old('semester',$pmbyr->semester)=="2"? 'selected':''}} value="2">2</option>
-                                            <option {{old('semester',$pmbyr->semester)=="3"? 'selected':''}} value="3">3</option>
-                                            <option {{old('semester',$pmbyr->semester)=="4"? 'selected':''}} value="4">4</option>
-                                            <option {{old('semester',$pmbyr->semester)=="5"? 'selected':''}} value="5">5</option>
-                                            <option {{old('semester',$pmbyr->semester)=="6"? 'selected':''}} value="6">6</option>
-                                            <option {{old('semester',$pmbyr->semester)=="7"? 'selected':''}} value="7">7</option>
-                                            <option {{old('semester',$pmbyr->semester)=="8"? 'selected':''}} value="8">8</option>
-                                            <option {{old('semester',$pmbyr->semester)=="9"? 'selected':''}} value="9">9</option>
-                                            <option {{old('semester',$pmbyr->semester)=="10"? 'selected':''}} value="10">10</option>
-                                            <option {{old('semester',$pmbyr->semester)=="11"? 'selected':''}} value="11">11</option>
-                                            <option {{old('semester',$pmbyr->semester)=="12"? 'selected':''}} value="12">12</option>
-                                            <option {{old('semester',$pmbyr->semester)=="13"? 'selected':''}} value="13">13</option>
-                                            <option {{old('semester',$pmbyr->semester)=="14"? 'selected':''}} value="14">14</option>
-                                            <option {{old('semester',$pmbyr->semester)=="pendek"? 'selected':''}} value="pendek">Pendek</option>
+                                            <option {{old('semester',$tgh->semester)=="1"? 'selected':''}} value="1">1</option>
+                                            <option {{old('semester',$tgh->semester)=="2"? 'selected':''}} value="2">2</option>
+                                            <option {{old('semester',$tgh->semester)=="3"? 'selected':''}} value="3">3</option>
+                                            <option {{old('semester',$tgh->semester)=="4"? 'selected':''}} value="4">4</option>
+                                            <option {{old('semester',$tgh->semester)=="5"? 'selected':''}} value="5">5</option>
+                                            <option {{old('semester',$tgh->semester)=="6"? 'selected':''}} value="6">6</option>
+                                            <option {{old('semester',$tgh->semester)=="7"? 'selected':''}} value="7">7</option>
+                                            <option {{old('semester',$tgh->semester)=="8"? 'selected':''}} value="8">8</option>
+                                            <option {{old('semester',$tgh->semester)=="9"? 'selected':''}} value="9">9</option>
+                                            <option {{old('semester',$tgh->semester)=="10"? 'selected':''}} value="10">10</option>
+                                            <option {{old('semester',$tgh->semester)=="11"? 'selected':''}} value="11">11</option>
+                                            <option {{old('semester',$tgh->semester)=="12"? 'selected':''}} value="12">12</option>
+                                            <option {{old('semester',$tgh->semester)=="13"? 'selected':''}} value="13">13</option>
+                                            <option {{old('semester',$tgh->semester)=="14"? 'selected':''}} value="14">14</option>
+                                            <option {{old('semester',$tgh->semester)=="pendek"? 'selected':''}} value="pendek">Pendek</option>
                                         </select>
                                         {{Form::label('keterangan','Keterangan :')}}
                                         {{Form::text('keterangan',$tgh->keterangan,['class'=>'form-control form-group','placeholder'=>'','required'])}}
