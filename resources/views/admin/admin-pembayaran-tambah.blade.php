@@ -42,85 +42,71 @@
                     @foreach ($s1 as $totals1)
                         <p>Semester 1 : Rp. {{ number_format($totals1->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts1 as $ss1) || Status : {{$ss1->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s2 as $totals2)
                         <p>Semester 2 : Rp. {{ number_format($totals2->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts2 as $ss2) || Status : {{$ss2->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s3 as $totals3)
                         <p>Semester 3 : Rp. {{ number_format($totals3->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts3 as $ss3) || Status : {{$ss3->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s4 as $totals4)
                         <p>Semester 4 : Rp. {{ number_format($totals4->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts4 as $ss4) || Status : {{$ss4->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s5 as $totals5)
                         <p>Semester 5 : Rp. {{ number_format($totals5->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts5 as $ss5) || Status : {{$ss5->status}} @endforeach</p>
                     @endforeach 
 
                     @foreach ($s6 as $totals6)
                         <p>Semester 6 : Rp. {{ number_format($totals6->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts6 as $ss6) || Status : {{$ss6->status}} @endforeach</p>
                     @endforeach 
 
                     @foreach ($s7 as $totals7)
                         <p>Semester 7 : Rp. {{ number_format($totals7->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts7 as $ss7) || Status : {{$ss7->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s8 as $totals8)
                         <p>Semester 8 : Rp. {{ number_format($totals8->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts8 as $ss8) || Status : {{$ss8->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s9 as $totals9)
                         <p>Semester 9 : Rp. {{ number_format($totals9->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts9 as $ss9) || Status : {{$ss9->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s10 as $totals10)
                         <p>Semester 10 : Rp. {{ number_format($totals10->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts10 as $ss10) || Status : {{$ss10->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s11 as $totals11)
                         <p>Semester 11 : Rp. {{ number_format($totals11->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts11 as $ss11) || Status : {{$ss11->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s12 as $totals12)
                         <p>Semester 12 : Rp. {{ number_format($totals12->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts12 as $ss12) || Status : {{$ss12->status}} @endforeach</p>
                     @endforeach
 
                     @foreach ($s13 as $totals13)
                         <p>Semester 13 : Rp. {{ number_format($totals13->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts13 as $ss13) || Status : {{$ss13->status}} @endforeach</p>
                     @endforeach
                     
                     @foreach ($s14 as $totals14)
                         <p>Semester 14 : Rp. {{ number_format($totals14->total, 2, ',', '.') }}
                         <br>
-                        @foreach ($sts14 as $ss14) || Status : {{$ss14->status}} @endforeach</p>
                     @endforeach
                               
                 </div>
@@ -575,7 +561,8 @@
                     @endforeach
                     </tbody>
                 </table>
-
+            
+            {{-- 
                 <div style="margin-top:20px;">
                     <h3>Status Pembayaran</h3>
                     <hr>
@@ -663,6 +650,7 @@
                         </tbody>
                     </table>
                 </div>
+            --}}
             </div><!--end col-->
         </div><!--row-->
     </div><!--container-->
