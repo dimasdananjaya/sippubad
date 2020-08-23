@@ -6,7 +6,7 @@
         
         <div class="col-lg-4">
             <div class="card" style="padding:10px 10px 10px 10px; margin-bottom:20px;">
-                <h5>{{ Auth::user()->name}}</h5>
+                <h5><b>{{ Auth::user()->name}}</b></h5>
                 <hr>
                 <p>NIM : {{ Auth::user()->nim}}</p>
                 <p>Kelas : {{ Auth::user()->kelas}}</p>
@@ -17,7 +17,7 @@
                 $prodi=DB::select(DB::raw("SELECT prodi FROM prodi WHERE id_prodi='$prodi'"));
                 @endphp
                 @foreach($prodi as $prdi)
-                    <h5 style="margin-top:20px;">Beban Biaya Prodi {{$prdi->prodi}}</h5>
+                    <h5 style="margin-top:20px;"><b>Beban Biaya Prodi {{$prdi->prodi}}</b></h5>
                     <hr>
                 @endforeach
                 <table style="margin-top:20px;" class="table table-bordered">
@@ -36,76 +36,21 @@
                 </table>
             </div>
             <div class="card" style="padding: 10px 10px 10px 10px;">
-                <h4>Total Pembayaran : </h4>
-                
+                <h4><b>Total Pembayaran : </b></h4>
                 <hr>
-                @foreach ($s1 as $totals1)
-                    <p>Semester 1 : Rp. {{ number_format($totals1->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                @foreach ($s2 as $totals2)
-                    <p>Semester 2 : Rp. {{ number_format($totals2->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                @foreach ($s3 as $totals3)
-                    <p>Semester 3 : Rp. {{ number_format($totals3->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                @foreach ($s4 as $totals4)
-                    <p>Semester 4 : Rp. {{ number_format($totals4->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                @foreach ($s5 as $totals5)
-                    <p>Semester 5 : Rp. {{ number_format($totals5->total, 2, ',', '.') }}
-                    <br>
-                @endforeach  
-                @foreach ($s6 as $totals6)
-                    <p>Semester 6 : Rp. {{ number_format($totals6->total, 2, ',', '.') }}
-                    <br>
-                @endforeach  
-                 @foreach ($s7 as $totals7)
-                    <p>Semester 7 : Rp. {{ number_format($totals7->total, 2, ',', '.') }}
-                    <br>
-                @endforeach  
-                @foreach ($s8 as $totals8)
-                    <p>Semester 8 : Rp. {{ number_format($totals8->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                
-                @foreach ($s9 as $totals9)
-                    <p>Semester 9 : Rp. {{ number_format($totals9->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-
-                @foreach ($s10 as $totals10)
-                    <p>Semester 10 : Rp. {{ number_format($totals10->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-
-                @foreach ($s11 as $totals11)
-                    <p>Semester 11 : Rp. {{ number_format($totals11->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-
-                @foreach ($s12 as $totals12)
-                    <p>Semester 12 : Rp. {{ number_format($totals12->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-
-                @foreach ($s13 as $totals13)
-                    <p>Semester 13 : Rp. {{ number_format($totals13->total, 2, ',', '.') }}
-                    <br>
-                @endforeach
-                
-                @foreach ($s14 as $totals14)
-                    <p>Semester 14 : Rp. {{ number_format($totals14->total, 2, ',', '.') }}
+                <?php
+                    $counterSemester=1;
+                ?>
+                @foreach ($totalPembayaranSemester as $tps)
+                    <p>Semester {{$counterSemester++}} : Rp. {{ number_format($tps->total, 2, ',', '.') }}
                     <br>
                 @endforeach
             </div>
         </div>
 
             <div class="col-lg-8">
-                <h4>Riwayat Pembayaran : </h4>
+                <h4 class="mt-5"><b>Riwayat Pembayaran : </b></h4>
+                <hr>
                 <table id="tabel" class="table table-hover table-bordered table-resposive">
                     <thead>
                         <tr>
@@ -131,7 +76,7 @@
                 </table>
 
 
-                <h3 style="margin-top: 20px;">Tagihan Pembayaran</h3>
+                <h3 class="mt-5"><b>Tagihan Pembayaran</b></h3>
                 <hr>
                 <table id="tabel-tagihan" class="table table-hover table-bordered table-resposive">
                     <thead>

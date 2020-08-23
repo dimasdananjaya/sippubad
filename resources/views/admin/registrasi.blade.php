@@ -44,7 +44,7 @@
                             <option  value='reguler'>Reguler</option>
                             <option  value='karyawan'>Karyawan</option>
                         </select>
-                        {{Form::hidden('init_status', 'no') }}
+
                     </div>
                     {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
                 {!!Form::close()!!}
@@ -66,7 +66,6 @@
                     <th scope="col">Kelas</th>
                     <th>Status Perkuliahan</th>
                     <th>Edit</th>
-                    <th>Init</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -80,16 +79,6 @@
                     <td>{{$usr->kelas}}</td>
                     <td>{{$usr->status_perkuliahan}}</td>
                     <td><a href="{{ route('user.edit', $usr->id_user) }}" class="btn btn-warning btn-sm">Edit</a></td>
-                    @if($usr->init_status == 'yes')
-                    <td>Initialized</td>
-                    @else
-                    <td>
-                    {!!Form::open(['action'=>'InitStatusPembayaran@initStatusPembayaran', 'method'=>'POST'])!!}
-                        {{Form::hidden('id_user', $usr->id_user) }}
-                        {{Form::submit('Initialisasi',['class'=>'btn btn-success btn-sm'])}}
-                    {!!Form::close()!!}
-                    </td>
-                    @endif
                  </tr>
                 @endforeach
                 </tbody>

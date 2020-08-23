@@ -8,10 +8,10 @@
     
     <hr>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             <div style="padding:10px 10px 10px 10px;" class="card">
                 @foreach($totalPembayaranPeriode as $total)
-                <h4>Total Pembayaran : <br><br>Rp. {{ number_format($total->total, 2, ',', '.') }}
+                <h4 class="text-center">Total Pembayaran : <br><br>Rp. {{ number_format($total->total, 2, ',', '.') }}
                 @endforeach
             </div>
         </div>

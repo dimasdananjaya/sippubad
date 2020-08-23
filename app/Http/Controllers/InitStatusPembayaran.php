@@ -7,6 +7,7 @@ use DB;
 
 class InitStatusPembayaran extends Controller
 {
+    //UNUSED ASSETS
     public function initStatusPembayaran(Request $request){
         $id_user=$request->input('id_user');
         $user=DB::select(DB::raw("SELECT * FROM users WHERE id_user='$id_user'"));

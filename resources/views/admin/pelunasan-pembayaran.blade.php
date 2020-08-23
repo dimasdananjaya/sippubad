@@ -1,3 +1,4 @@
+<!-------------------------- this monstrosity are not used anymore -->
 @extends('layouts.app')
 
 @section('content')
