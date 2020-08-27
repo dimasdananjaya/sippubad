@@ -26,6 +26,7 @@ class PembayaranController extends Controller
         $dataUser= DB::table('users')
         ->join('prodi', 'users.id_prodi', '=', 'prodi.id_prodi')
         ->select('users.*', 'prodi.prodi')
+        ->where('users.status_perkuliahan','aktif')
         ->get();
         $dataProdi=Prodi::all();
         $dataPeriode=Periode::all();
@@ -109,6 +110,7 @@ class PembayaranController extends Controller
 
         $dataTagihanUntukDibayar=DB::select(DB::raw("SELECT * FROM tagihan WHERE id_user='$id' AND status='Belum Lunas'"));
 
+        $totalTagihanUntukDibayar=DB::select(DB::raw("SELECT * FROM tagihan WHERE id_user='$id' AND status='Belum Lunas'"));
         $totalPembayaranSemester=DB::select(DB::raw("SELECT SUM(jumlah_bayar) AS total FROM pembayaran WHERE id_user='$id' group by semester asc"));
 
         return view('admin.admin-pembayaran-tambah')
