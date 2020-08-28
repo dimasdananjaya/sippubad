@@ -18,39 +18,45 @@
     </div>
     <br>
 
-    <table id="tabel" class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>Nomor</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Prodi</th>
-                <th>No. Referensi</th>
-                <th>Nama Pembayaran</th>
-                <th>Jumlah Bayar</th>
-                <th>Semester</th>
-                <th>Validated By</th>
-                <th>Tipe</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($dataPembayaranPeriode as $rekap)
-                <tr>
-                <td></td>
-                <td>{{$rekap->nim}}</td>
-                <td>{{$rekap->name}}</td>
-                <td>{{$rekap->prodi}}</td>
-                <td>{{$rekap->no_referensi}}</td>
-                <td>{{$rekap->nama_pembayaran}}</td>
-                <td>Rp. {{ number_format($rekap->jumlah_bayar, 2, ',', '.') }}</td>
-                <td>{{$rekap->semester}}</td>
-                <td>{{$rekap->validated_by}}</td>
-                <td>{{$rekap->tipe}}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+    <div class="card">
+        <div class="card-header">
+        </div><!--card-header-->
+        <div class="card-body">
+            <table id="tabel" class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nomor</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Prodi</th>
+                        <th>No. Referensi</th>
+                        <th>Nama Pembayaran</th>
+                        <th>Jumlah Bayar</th>
+                        <th>Semester</th>
+                        <th>Validated By</th>
+                        <th>Tipe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($dataPembayaranPeriode as $rekap)
+                        <tr>
+                        <td></td>
+                        <td>{{$rekap->nim}}</td>
+                        <td>{{$rekap->name}}</td>
+                        <td>{{$rekap->prodi}}</td>
+                        <td>{{$rekap->no_referensi}}</td>
+                        <td>{{$rekap->nama_pembayaran}}</td>
+                        <td>Rp. {{ number_format($rekap->jumlah_bayar, 2, ',', '.') }}</td>
+                        <td>{{$rekap->semester}}</td>
+                        <td>{{$rekap->validated_by}}</td>
+                        <td>{{$rekap->tipe}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div><!--card-body-->
+    </div><!--card-->
+</div><!--container-->
 
 <script type="text/javascript">
     $(document).ready(function() {

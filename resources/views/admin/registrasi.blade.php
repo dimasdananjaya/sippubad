@@ -4,8 +4,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-5">
-            <div class="card">
-                <div class="card-header">{{ __('Registrasi') }}</div>
+            <div class="mt-3 card">
+                <div class="card-header">
+                    <p><b>Registrasi</b></p>
+                </div><!--card-header-->
 
                 <div class="card-body">
                     {!!Form::open(['action'=>'UserController@store', 'method'=>'POST'])!!}
@@ -52,40 +54,45 @@
             </div>
         </div>
 
-        <div style="margin-top:20px;" class="col-lg-7">
-            <h3>Data User dan Mahasiswa</h3>
-            <hr>
-            <table id="tabel" class="table table-hover table-bordered">
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Angkatan</th>
-                    <th scope="col">Kelas</th>
-                    <th>Status Perkuliahan</th>
-                    <th>Edit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                @foreach ($user as $usr)
-                <tr>
-                    <td></td>
-                    <td>{{$usr->nim}}</td>
-                    <td>{{$usr->name}}</td>
-                    <td>{{$usr->prodi}}</td>
-                    <td>{{$usr->angkatan}}</td>
-                    <td>{{$usr->kelas}}</td>
-                    <td>{{$usr->status_perkuliahan}}</td>
-                    <td><a href="{{ route('user.edit', $usr->id_user) }}" class="btn btn-warning btn-sm">Edit</a></td>
-                 </tr>
-                @endforeach
-                </tbody>
-              </table>
-        </div>
-    </div>
-</div>
+        <div class="pt-3 col-lg-7">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Data User dan Mahasiswa</h3>
+                </div><!--card-header-->
+                <div class="card-body">
+                    <table id="tabel" class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th scope="col">NIM</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Prodi</th>
+                            <th scope="col">Angkatan</th>
+                            <th scope="col">Kelas</th>
+                            <th>Status Perkuliahan</th>
+                            <th>Edit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($user as $usr)
+                        <tr>
+                            <td></td>
+                            <td>{{$usr->nim}}</td>
+                            <td>{{$usr->name}}</td>
+                            <td>{{$usr->prodi}}</td>
+                            <td>{{$usr->angkatan}}</td>
+                            <td>{{$usr->kelas}}</td>
+                            <td>{{$usr->status_perkuliahan}}</td>
+                            <td><a href="{{ route('user.edit', $usr->id_user) }}" class="btn btn-warning btn-sm">Edit</a></td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div><!--card-body-->
+            </div><!--card-->
+        </div><!--col-7-->
+    </div><!--row-->
+</div><!--container-->
 
 <script type="text/javascript">
     $(document).ready(function() {
