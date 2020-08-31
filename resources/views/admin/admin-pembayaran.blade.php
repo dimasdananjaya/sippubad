@@ -3,34 +3,40 @@
 @section('content')
     <div class="container">
         <div  class="col-lg-12">
-            <h3>Pilih Data Mahasiswa Untuk Melakukan Pembayaran</h3>
-            <hr>
-            <table id="tabel" class="table table-hover">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Angkatan</th>
-                    <th>Edit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                @foreach ($user as $usr)
-                <tr>
-                    <td></td>
-                    <td>{{$usr->nim}}</td>
-                    <td>{{$usr->name}}</td>
-                    <td>{{$usr->prodi}}</td>
-                    <td>{{$usr->angkatan}}</td>
-                    <td><a href="{{ route('pembayaran.show', $usr->id_user) }}" class="btn btn-primary btn-sm">Detail</a></td>
-                 </tr>
-                @endforeach
-                </tbody>
-              </table>
-        </div>
-    </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4><b>Pilih Data Mahasiswa Untuk Melakukan Pembayaran</b></h4>
+                </div><!--card-header-->
+                <div class="card-body">
+                    <table id="tabel" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">NIM</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Prodi</th>
+                            <th scope="col">Angkatan</th>
+                            <th>Edit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($user as $usr)
+                        <tr>
+                            <td></td>
+                            <td>{{$usr->nim}}</td>
+                            <td>{{$usr->name}}</td>
+                            <td>{{$usr->prodi}}</td>
+                            <td>{{$usr->angkatan}}</td>
+                            <td><a href="{{ route('pembayaran.show', $usr->id_user) }}" class="btn btn-primary btn-sm">Detail</a></td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    <a href="{{route('admin_dashboard')}}" class="btn btn-primary btn-block mt-3">Kembali Ke Halaman Admin</a>
+                </div><!--card-body-->
+            </div><!--card-->
+        </div><!--col 12-->
+    </div><!--container-->
 
     <script type="text/javascript">
         $(document).ready(function() {

@@ -136,6 +136,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <a href="{{route('admin_dashboard')}}" class="btn btn-primary btn-block mt-3">Kembali Ke Halaman Admin</a>
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-9-->

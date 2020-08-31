@@ -13,7 +13,7 @@
 
                         <p>Nama : {{$usr->name}}</p>
                         <p>NIM : {{$usr->nim}}</p>
-                        <p>Kelas : {{$usr->kelas}}</p>
+                        <p>Kelas : <b>{{$usr->kelas}}</b></p>
     
                         @php
                         $databiaya=DB::select(DB::raw("SELECT * FROM biaya_prodi WHERE id_prodi='$usr->id_prodi' AND kelas='$usr->kelas'"));
@@ -47,7 +47,7 @@
                 <div class="card">
                     <div class="card-header">
                         @foreach($prodi as $prdi)
-                            <h5><b>Beban Biaya Prodi {{$prdi->prodi}}</b></h5>
+                            <h5><b>Biaya Semester Prodi {{$prdi->prodi}}</b></h5>
                         @endforeach
                     </div><!--card-header-->
                     <div class="card-body">
