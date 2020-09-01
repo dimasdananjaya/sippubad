@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.mahasiswa')
 
 @section('content')
-    <div class="container-fluid mt-3">
+<section id="dashboard-mahasiswa">
+    <div class="container mt-3">
         <div class="row">
         
         <div class="col-lg-4">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-header">
                     <h4><b>Identitas Mahasiswa</b></h4>
                 </div><!--card-header-->
@@ -24,7 +25,7 @@
         </div><!--col-4-->
 
         <div class="col-lg-4">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-header">
                     <h4><b>Total Pembayaran : </b></h4>
                 </div>
@@ -33,10 +34,10 @@
                     <?php
                         $counterSemester=1;
                     ?>
-                    <div class="row">
+                    <div class="row" id="tagihan">
                         @foreach ($totalPembayaranSemester as $tps)
                             <div class="col-lg-6">
-                                <p>Semester {{$counterSemester++}} : <br> Rp. {{ number_format($tps->total, 2, ',', '.') }}
+                                <p><b>Semester {{$counterSemester++}} </b> : <br> Rp. {{ number_format($tps->total, 2, ',', '.') }}
                             </div><!--col-6-->
                         @endforeach
                     </div><!--row-->
@@ -45,14 +46,14 @@
         </div><!--col-4-->
 
         <div class="col-lg-4">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-header">
                     @foreach($prodi as $prdi)
-                        <h5><b>Beban Biaya Prodi {{$prdi->prodi}}</b></h5>
+                        <h4><b>Beban Biaya Prodi {{$prdi->prodi}}</b></h4>
                     @endforeach
                 </div><!--card-header-->
                 <div class="card-body">
-                    <table style="margin-top:20px;" class="table table-bordered">
+                    <table style="margin-top:20px;" class="table table-bordered table-responsive-sm">
                         <thead>
                             <th>Jenis Biaya</th>
                             <th>Jumlah Biaya</th>
@@ -76,7 +77,7 @@
                         <h4><b>Tagihan Pembayaran</b></h4>
                     </div><!--card-header-->
                     <div class="card-body">
-                        <table id="tabel-tagihan" class="table table-hover table-bordered table-responsive-sm">
+                        <table id="tabel-tagihan" class="table table-hover table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -112,7 +113,7 @@
                         <h4 ><b>Riwayat Pembayaran : </b></h4>
                     </div><!--card-header-->
                     <div class="card-body">
-                        <table id="tabel" class="table table-hover table-bordered table-resposive-sm">
+                        <table id="tabel" class="table table-hover table-bordered table-responsive-sm">
                             <thead>
                                 <tr>
                                     <th>Nomor</th>
@@ -141,6 +142,7 @@
             </div><!--end col-->
         </div><!--row-->
     </div><!--container-->
+</section>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -183,6 +185,10 @@
                 } );
             } ).draw();        
         } );
+
+        jQuery("#tagihan-pembayaran").click(function(){
+            jQuery("#tagihan-pembayaran").toggle();
+        });
+
     </script>
-    </div><!--container-->
 @endsection
