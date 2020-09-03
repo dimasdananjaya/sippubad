@@ -11,7 +11,7 @@
                     <img class="d-block mx-auto" src="/resources/logo/welcome.svg" style="max-width:20em; max-height:18em;">
                     <div class="card-body">
                         <div class="text-center" style="margin-top:1em;">
-                        <h3>Welcome To SIPA UBAD</h3>
+                        <h3>Welcome To SIPP UBAD</h3>
                         <p>Silahkan Login Terlebih Dahulu</p>
                         <a href="/login" class="btn btn-success">Login Page</a>
                         </div>

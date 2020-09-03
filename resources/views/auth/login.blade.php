@@ -10,7 +10,7 @@
                 <div class="card login-form">
                     <img class="d-block mx-auto" src="/resources/logo/welcome.svg" style="max-width:20em; max-height:18em;">
                     <div class="card-body">
-                        <h2><b>SIPA UBAD</b></h2>
+                        <h2><b>SIPP UBAD</b></h2>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 

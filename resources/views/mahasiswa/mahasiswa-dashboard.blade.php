@@ -8,6 +8,7 @@
         <div class="col-lg-4">
             <div class="card mt-3">
                 <div class="card-header">
+                    <img class="d-block mx-auto" src="/resources/logo/profile.svg">
                     <h4><b>Identitas Mahasiswa</b></h4>
                 </div><!--card-header-->
                 <div class="card-body">
@@ -27,6 +28,7 @@
         <div class="col-lg-4">
             <div class="card mt-3">
                 <div class="card-header">
+                    <img class="d-block mx-auto" src="/resources/logo/total-bayar.svg">
                     <h4><b>Total Pembayaran : </b></h4>
                 </div>
                 <!--card-header-->
@@ -48,6 +50,7 @@
         <div class="col-lg-4">
             <div class="card mt-3">
                 <div class="card-header">
+                    <img class="d-block mx-auto" src="/resources/logo/beban-biaya.svg">
                     @foreach($prodi as $prdi)
                         <h4><b>Beban Biaya Prodi {{$prdi->prodi}}</b></h4>
                     @endforeach
@@ -100,7 +103,11 @@
                                         <td>{{$tgh->semester}}</td>
                                         <td>{{$tgh->keterangan}}</td>
                                         <td>{{$tgh->periode}}</td>
-                                        <td>{{$tgh->status}}</td>
+                                        @if ($tgh->status=='Belum Lunas')
+                                            <td style="color:red;"><b>{{$tgh->status}}</b></td>
+                                        @else
+                                            <td style="color:#a2de96;"><b>{{$tgh->status}}</b></td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>
