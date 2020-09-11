@@ -5,7 +5,7 @@
     <div class="container mt-3">
         <div class="row">
         
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             <div class="card mt-3">
                 <div class="card-header">
                     <img class="d-block mx-auto" src="/resources/logo/profile.svg">
@@ -25,7 +25,7 @@
             </div><!--card-->
         </div><!--col-4-->
 
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             <div class="card mt-3">
                 <div class="card-header">
                     <img class="d-block mx-auto" src="/resources/logo/total-bayar.svg">
@@ -47,6 +47,7 @@
             </div><!--card-->
         </div><!--col-4-->
 
+    {{--
         <div class="col-lg-4">
             <div class="card mt-3">
                 <div class="card-header">
@@ -73,7 +74,7 @@
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-4-->
-
+    --}}
             <div class="col-lg-12 mt-3">
                 <div class="card mt-3">
                     <div class="card-header">
