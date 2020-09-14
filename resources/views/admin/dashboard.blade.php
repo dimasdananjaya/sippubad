@@ -69,8 +69,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <img class="card-img-top mx-auto" src="/resources/logo/rekap-tagihan.svg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><b>Rekap Tagihan</b></h5>
+                      <p class="card-text text-center">Lihat Rekapitulasi Tagihan</p>
+                      <a href="/admin/rekap-tagihan" class="btn btn-primary btn-block">Pilih</a>
+                    </div>
+                </div>
+            </div>
  
-    </div>
-</div>
+    </div><!--row-->
+</div><!--container-->
 </section>
 @endsection

@@ -35,12 +35,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::get('/profil', 'AdminController@editProfilPage')->name('admin-edit-profil-page');
     Route::get('/pembayaran-periode', 'RekapPembayaranPeriode@rekapPembayaranPeriode');
     Route::get('/pembayaran-periode-list', 'RekapPembayaranPeriode@listPembayaranPeriode');
-    Route::get('/pelunasan-pembayaran', 'DaftarPelunasan@index');
-    Route::get('/list-pelunasan-pembayaran', 'DaftarPelunasan@listPelunasanPembayaran');
+    Route::get('/rekap-tagihan', 'TagihanController@rekapTagihan');
     Route::put('/profil/update', 'AdminController@adminUpdateProfil');
     Route::put('/pembayaran/update_status_pembayaran', 'PembayaranController@StatusPembayaranUpdate');
     Route::Post('/pembayaran/status_pembayaran','PembayaranController@statusPembayaran');
-    Route::Post('/pembayaran/status_pembayaran/initialize','InitStatusPembayaran@initStatusPembayaran');
     Route::Post('/tagihan/tambah','TagihanController@tambahTagihan');
     Route::put('/tagihan/update/{id}','TagihanController@updateTagihan');
     Route::resource('/periode','PeriodeController');
@@ -48,6 +46,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::resource('/biaya_prodi','BiayaProdiController');
     Route::resource('/pembayaran','PembayaranController');
     Route::resource('/rekap-pembayaran','RekapPembayaranController');
-
+    
 
 });

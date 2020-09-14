@@ -69,4 +69,16 @@ class TagihanController extends Controller
 
         }
     }
+
+    public function rekapTagihan(){
+        $rekapTagihan= DB::table('tagihan')
+        ->join('prodi', 'tagihan.id_prodi', '=', 'prodi.id_prodi')
+        ->join('periode', 'tagihan.id_periode', '=', 'periode.id_periode')
+        ->join('users', 'tagihan.id_user', '=', 'users.id_user')
+        ->select('tagihan.*', 'prodi.prodi', 'periode.periode','users.nim','users.name')
+        ->orderBy('status','desc')
+        ->get();
+
+        return view('admin.rekap-tagihan')->with('rekapTagihan',$rekapTagihan);
+    }
 }
