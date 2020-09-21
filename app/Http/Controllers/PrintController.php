@@ -12,7 +12,7 @@ use App\Periode;
 use App\Pembayaran;
 use App\StatusPembayaran;
 
-class PDFController extends Controller
+class PrintController extends Controller
 {
     public function printPembayaran(Request $request)
     {
@@ -33,5 +33,23 @@ class PDFController extends Controller
         return view('admin.admin-print-pembayaran')
         ->with('dataPembayaran',$dataPembayaran)
         ->with('dataKelas',$dataKelas);
+    }
+
+    public function printTagihan(Request $request)
+    {
+        $id_tagihan=$request->input('id_tagihan');
+        $id_user=$request->input('id_user');
+        //$dataPembayaran=DB::select(DB::raw("SELECT * FROM pembayaran WHERE id_user='$id'"));
+
+        $dataTagihan= DB::table('tagihan')
+        ->join('periode', 'periode.id_periode', '=', 'tagihan.id_periode')
+        ->join('users', 'users.id_user', '=', 'tagihan.id_user')
+        ->join('prodi', 'prodi.id_prodi', '=', 'tagihan.id_prodi')
+        ->select('pembayaran.*', 'periode.periode','users.name','prodi.prodi','users.kelas')
+        ->where('id_tagihan',$id_tagihan)
+        ->get();
+
+        return view('admin.admin-print-tagihan')
+        ->with('dataTagihan',$dataPembayaran);
     }
 }
