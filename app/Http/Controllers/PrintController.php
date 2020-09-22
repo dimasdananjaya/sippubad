@@ -39,12 +39,10 @@ class PrintController extends Controller
     {
         $id_tagihan=$request->input('id_tagihan');
         $id_user=$request->input('id_user');
-        //$dataPembayaran=DB::select(DB::raw("SELECT * FROM pembayaran WHERE id_user='$id'"));
 
         $dataTagihan= DB::table('tagihan')
         ->join('periode', 'periode.id_periode', '=', 'tagihan.id_periode')
         ->join('users', 'users.id_user', '=', 'tagihan.id_user')
-        ->join('prodi', 'prodi.id_prodi', '=', 'tagihan.id_prodi')
         ->select('pembayaran.*', 'periode.periode','users.name','prodi.prodi','users.kelas')
         ->where('id_tagihan',$id_tagihan)
         ->get();

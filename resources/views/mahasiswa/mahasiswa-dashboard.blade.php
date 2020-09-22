@@ -14,13 +14,16 @@
                 <div class="card-body">
                     <p>Nama : {{ Auth::user()->name}}</p>
                     <p>NIM : {{ Auth::user()->nim}}</p>
-                    <p>Kelas : {{ Auth::user()->kelas}}</p>
+                    <!--<p>Kelas : {{ Auth::user()->kelas}}</p>-->
                     @php
                     $prodi=Auth::user()->id_prodi;
                     $kelas=Auth::user()->kelas;
                     $databiaya=DB::select(DB::raw("SELECT * FROM biaya_prodi WHERE id_prodi='$prodi' AND kelas='$kelas'"));
                     $prodi=DB::select(DB::raw("SELECT prodi FROM prodi WHERE id_prodi='$prodi'"));
                     @endphp
+                    @foreach ($prodi as $prd)
+                        <p>Prodi : {{$prd->prodi}}</p>
+                    @endforeach
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-4-->
@@ -88,6 +91,8 @@
                                     <th>Id.</th>
                                     <th>Nama Tagihan</th>
                                     <th>Jumlah Tagihan</th>
+                                    <th>Total Bayar</th>
+                                    <th>Sisa</th>
                                     <th>Semester</th>
                                     <th>Keterangan</th>
                                     <th>Periode</th>
@@ -101,6 +106,26 @@
                                         <td>{{$tgh->id_tagihan}}</td>
                                         <td>{{$tgh->nama_tagihan}}</td>
                                         <td>Rp. {{ number_format($tgh->jumlah_tagihan, 2, ',', '.') }}</td>
+                                        <td>
+                                            @php
+                                            $id_tagihan=$tgh->id_tagihan;
+                                            $totalBayar=DB::select(DB::raw("SELECT sum(jumlah_bayar) AS total_bayar FROM pembayaran WHERE id_tagihan=$id_tagihan GROUP BY id_tagihan"));
+                                            @endphp
+                                            @foreach ($totalBayar as $tb)
+                                                Rp. {{ number_format($tb->total_bayar, 2, ',', '.') }}
+                                            @endforeach     
+                                        </td>
+                                        <td>
+                                            @php
+                                                //cari sisa pembayaran
+                                                foreach ($totalBayar as $tb) {
+                                                    $x=$tgh->jumlah_tagihan;
+                                                    $y=$tb->total_bayar;
+                                                    $sisa=$x-$y;
+                                                    echo number_format("$sisa",2,",",".");
+                                                }
+                                            @endphp
+                                        </td>
                                         <td>{{$tgh->semester}}</td>
                                         <td>{{$tgh->keterangan}}</td>
                                         <td>{{$tgh->periode}}</td>
