@@ -12,6 +12,7 @@
                     <h4><b>Identitas Mahasiswa</b></h4>
                 </div><!--card-header-->
                 <div class="card-body">
+                    <b>
                     <p>Nama : {{ Auth::user()->name}}</p>
                     <p>NIM : {{ Auth::user()->nim}}</p>
                     <!--<p>Kelas : {{ Auth::user()->kelas}}</p>-->
@@ -24,6 +25,7 @@
                     @foreach ($prodi as $prd)
                         <p>Prodi : {{$prd->prodi}}</p>
                     @endforeach
+                    </b>
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-4-->

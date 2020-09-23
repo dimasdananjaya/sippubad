@@ -23,14 +23,14 @@ Auth::routes(['register' => false]);
 
 // user protected routes
 Route::group(['middleware' => ['auth', 'mahasiswa'], 'prefix' => 'mahasiswa'], function () {
-    Route::get('/mahasiswa', 'DashboardMahasiswa@index')->name('mahasiswa_dashboard');
+    Route::get('/dashboard', 'DashboardMahasiswa@index')->name('mahasiswa_dashboard');
     Route::get('/profil', 'DashboardMahasiswa@mahasiswaEditProfilPage')->name('mahasiswa-edit-profil-page');
     Route::put('/profil/update', 'DashboardMahasiswa@mahasiswaUpdateProfil');
 });
 
 // admin protected routes
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin_dashboard');
+    Route::get('/dashboard', 'AdminController@index')->name('admin_dashboard');
     Route::get('/print', 'PDFController@printPembayaran')->name('printPDF');
     Route::get('/profil', 'AdminController@editProfilPage')->name('admin-edit-profil-page');
     Route::get('/pembayaran-periode', 'RekapPembayaranPeriode@rekapPembayaranPeriode');
@@ -48,4 +48,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::resource('/rekap-pembayaran','RekapPembayaranController');
     
 
+});
+
+Route::fallback(function(){
+    return view('errors.404');
 });
