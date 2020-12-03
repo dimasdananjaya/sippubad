@@ -146,6 +146,8 @@
                                     <th>Id.</th>
                                     <th>Nama Tagihan</th>
                                     <th>Jumlah Tagihan</th>
+                                    <th>Total Bayar</th>
+                                    <th>Sisa</th>
                                     <th>Semester</th>
                                     <th>Keterangan</th>
                                     <th>Periode</th>
@@ -160,6 +162,26 @@
                                     <td>{{$tgh->id_tagihan}}</td>
                                     <td>{{$tgh->nama_tagihan}}</td>
                                     <td>Rp. {{ number_format($tgh->jumlah_tagihan, 2, ',', '.') }}</td>
+                                    <td>
+                                        @php
+                                        $id_tagihan=$tgh->id_tagihan;
+                                        $totalBayar=DB::select(DB::raw("SELECT sum(jumlah_bayar) AS total_bayar FROM pembayaran WHERE id_tagihan=$id_tagihan GROUP BY id_tagihan"));
+                                        @endphp
+                                        @foreach ($totalBayar as $tb)
+                                            Rp. {{ number_format($tb->total_bayar, 2, ',', '.') }}
+                                        @endforeach     
+                                    </td>
+                                    <td>
+                                        @php
+                                            //cari sisa pembayaran
+                                            foreach ($totalBayar as $tb) {
+                                                $x=$tgh->jumlah_tagihan;
+                                                $y=$tb->total_bayar;
+                                                $sisa=$x-$y;
+                                                echo number_format("$sisa",2,",",".");
+                                            }
+                                        @endphp
+                                    </td>
                                     <td>{{$tgh->semester}}</td>
                                     <td>{{$tgh->keterangan}}</td>
                                     <td>{{$tgh->periode}}</td>
