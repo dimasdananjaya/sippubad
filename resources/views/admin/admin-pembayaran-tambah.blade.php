@@ -30,8 +30,8 @@
                     </div><!--card-header-->
                     <div class="card-body">
                         <?php
-                        $counterSemester=1;
-                    ?>
+                            $counterSemester=1;
+                        ?>
                     <div class="row">
                         @foreach ($totalPembayaranSemester as $tps)
                         <div class="col-lg-6">
@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                                 <!--Modal Tambah Tagihan-->
-                        <table id="tabel-tagihan" class="table table-hover table-bordered">
+                        <table id="tabel-tagihan" class="table table-hover table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -351,10 +351,10 @@
                           <!--Modal tambah pembayaran-->
         
                 
-                        <table id="tabel" class="table table-sm table-hover table-bordered table-responsive">
+                        <table id="tabel" class="table table-hover table-bordered table-responsive">
                             <thead>
                                 <tr>
-                                    <th style="display:none">Nomor</th>
+                                    <th>Nomor</th>
                                     <th>Id</th>
                                     <th>Id Tagihan</th>
                                     <th>Semester</th>
@@ -373,7 +373,7 @@
                             <tbody>
                                 @foreach($pembayaran as $pmbyr)
                                     <tr>
-                                    <td style="display:none;"></td>
+                                    <td></td>
                                     <td>{{$pmbyr->id_pembayaran}}</td>
                                     <td>{{$pmbyr->id_tagihan}}</td>
                                     <td class="text-center">{{$pmbyr->semester}}</td>
